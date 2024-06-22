@@ -1,7 +1,7 @@
 # Next TTC
 Next TTC displays when the next TTC vehicles will be arriving at a given stop. 2 x twelve MAX7219 LED displays are attached to a wifi-enabled ESP8266 microcontroller.
 
-![Demo](./assets/next-ttc-video.MP4)
+<img src="./assets/next-ttc-demo.png" width="250">
 
 ## Supplies
 - 24 MAX7219 LED Displays ([2xCAD$16](https://2ly.link/1yXWO))
