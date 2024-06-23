@@ -14,9 +14,9 @@ int delayBetweenPredictions = 20000;
 
 #define HARDWARE_TYPE MD_MAX72XX::FC16_HW
 #define MAX_DEVICES 12
-#define DATA_PIN_1 D7  // GPIO13
-#define CLK_PIN_1 D5   // GPIO14
-#define CS_PIN_1 D8    // GPIO15
+#define DATA_PIN_1 D7 // GPIO13
+#define CLK_PIN_1 D5  // GPIO14
+#define CS_PIN_1 D8   // GPIO15
 #define DATA_PIN_2 D2 // GPIO4
 #define CLK_PIN_2 D1  // GPIO5
 #define CS_PIN_2 D3   // GPIO0
@@ -59,11 +59,14 @@ void loop() {
   String response = httpsGetRequest(requestUrl);
   JsonDocument doc;
   deserializeJson(doc, response);
+  int countPredictions = 0;
 
   JsonArray predictions = doc["predictions"];
   for (JsonVariant preds : predictions) {
     if (preds["direction"]) {
-      // Case when there is one direction
+      countPredictions++;
+
+      // Case when there is one direction/route for a given stop
       if (preds["direction"]["title"]) {
         const char* displayText1 = "";
         displayText1 = preds["direction"]["title"];
@@ -82,7 +85,7 @@ void loop() {
         continue;
       }
 
-      // Case when there is more than one direction
+      // Case when there is more than one direction/route for a given stop
       JsonArray direction = preds["direction"];
       for (JsonVariant dir : direction) {
         const char* displayText1 = "";
@@ -101,6 +104,12 @@ void loop() {
         delay(delayBetweenPredictions);
       }
     }
+  }
+
+  // Case when there are no vehicle predictions in the response
+  if (countPredictions == 0) {
+    display1.print("No vehicle predictions");
+    delay(60000);
   }
 }
 
