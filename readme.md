@@ -5,13 +5,13 @@ Next TTC displays when the next TTC vehicles will be arriving at a given stop. 2
 
 ## Supplies
 - 24 MAX7219 LED Displays ([2xCAD$16](https://2ly.link/1yXWO))
-- Header pins ([CAD$10](https://2ly.link/1yXWU))
+- Right angled header pins ([CAD$10](https://2ly.link/1yZRW))
 - ESP8266 Microcontroller ([CAD$12](https://2ly.link/1yXWR))
 - KeeYees breakout board ([CAD$15](https://amzn.to/3RCGdrc))
 - Jumper wires ([CAD$13](https://2ly.link/1yXWT))
 - MicroUSB to electrical outlet
 
-The MAX7219 displays have to be soldered together with the help of the header pins. See this [video](https://www.youtube.com/watch?v=gNjKy5nY64k&t=423s) for more information. Instead of buying male-to-male header pins like in the video, you could also buy [female right angled pins](https://2ly.link/1yZRW), which requires less soldering and lets you more easily take them apart.
+The MAX7219 displays have to be soldered together with the help of the header pins. See this [video](https://www.youtube.com/watch?v=gNjKy5nY64k&t=423s) for more information. Instead of buying male-to-male header pins like in the video, you could buy [male-to-female right angled pins](https://2ly.link/1yZRW). Not only does this require less soldering, but it also lets you more easily take the pieces apart.
 
 If you'd prefer not to solder, I'd look into a display like the [P10](https://2ly.link/1yXUD). It has benefit of different colours but note that it's also considerably more expensive.
 
